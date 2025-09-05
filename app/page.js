@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
-import BeforeAfter from "./components/BeforeAfter";
+import IntroSection from "./components/IntroSection";
+import FeaturesSection from "./components/FeaturesSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -9,7 +10,8 @@ export default function Home() {
     <main className="">
       <Header />
       <Banner />
-      <BeforeAfter /> 
+      <IntroSection />
+      <FeaturesSection />
       <Footer />
     </main>
   );

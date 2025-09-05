@@ -1,30 +1,52 @@
-import Image from 'next/image'
-import React from 'react'
+"use client";
+
+import Image from "next/image";
+import React from "react";
 
 export default function Banner() {
-    return (
-        <div className='flex h-screen bg-[#e6e6e6]'>
-            <div className='w-1/2 flex flex-col items-center justify-center'>
-                <div className="w-1/2">
-                    <h1 className='text-[50px] text-black-300 leading-[1.15]'>
-                        Get ready to
-                    </h1>
-                    <h1 className='text-[50px] text-black leading-[1.15]'>
-                        supercharge
-                    </h1>
-                    <h1 className='text-[50px] text-black-300 leading-[1.15]'>
-                        your goal- setting and planning .
-                        
-                    </h1>
-                </div>
-                <div className='h-[50px] w-2/3 mt-10 relative'>
-                    <input className='w-full pl-5 h-full rounded-3xl outline-none' placeholder='Enter your email' />
-                    <button className='absolute right-0 h-full bg-black rounded-3xl text-white w-[150px]'>Register</button>
-                </div>
-            </div>
-            <div className='w-1/2 relative'>
-                <Image fill src="https://img.freepik.com/free-vector/hand-drawn-bodyguard-illustration_23-2150299888.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719100800&semt=ais_user" />
-            </div>
+  return (
+    <section className="flex flex-col md:flex-row items-center bg-[#f8f9fa] px-6 md:px-20 py-16 md:py-20">
+      {/* Left content */}
+      <div className="flex-1 flex flex-col justify-center items-start text-center md:text-left">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          Tối ưu hóa Web
+        </h1>
+        <h2 className="text-lg md:text-xl lg:text-2xl text-gray-700 mt-4">
+          Thiết kế UI hiện đại & chiến lược SEO hiệu suất cao
+        </h2>
+        <p className="mt-6 text-gray-600 max-w-md">
+          Cải thiện tốc độ, tăng trải nghiệm người dùng và nâng cao hiệu quả
+          SEO cho website của bạn.
+        </p>
+
+        {/* Form đăng ký */}
+        <div className="mt-8 flex w-full max-w-md relative">
+          <input
+            type="email"
+            placeholder="Nhập email của bạn"
+            className="w-full pl-5 pr-36 h-12 rounded-3xl border border-gray-300 outline-none"
+          />
+          <button className="absolute right-1 top-1 bottom-1 px-5 rounded-3xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition">
+            Đăng ký
+          </button>
         </div>
-    )
+      </div>
+
+      {/* Right image */}
+      <div className="flex-1 flex justify-center mt-10 md:mt-0">
+        <div className="relative w-[280px] md:w-[380px] lg:w-[450px] h-[220px] md:h-[300px] lg:h-[350px]">
+          <Image
+            src="/images/Optimize.jpg" // ảnh trong public/images/
+            alt="Minh họa tối ưu web & SEO"
+            fill
+            className="object-contain"
+            priority
+            sizes="(max-width: 768px) 100vw,
+                   (max-width: 1200px) 50vw,
+                   400px"
+          />
+        </div>
+      </div>
+    </section>
+  );
 }

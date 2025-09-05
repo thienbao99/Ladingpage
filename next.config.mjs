@@ -1,15 +1,4 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        remotePatterns: [
-            {
-                hostname: 'media.istockphoto.com'
-            },
-            {
-                hostname:'img.freepik.com'
-            }
-        ]
-    }
+  reactStrictMode: false,
 };
-
 export default nextConfig;
