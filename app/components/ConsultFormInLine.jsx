@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-export default function ConsultFormInline({ initialEmail = "" }) {
-  const [form, setForm] = useState({ name: "", email: initialEmail, message: "" });
+export default function ConsultFormInline() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -21,59 +21,46 @@ export default function ConsultFormInline({ initialEmail = "" }) {
       const data = await res.json();
 
       if (data.success) {
-        setStatus("✅ Gửi thành công! Chúng tôi sẽ liên hệ sớm.");
-        setForm({ name: "", email: initialEmail, message: "" });
-        setTimeout(() => setStatus(""), 2000);
+        setStatus("✅ Gửi thành công!");
+        setForm({ name: "", email: "", message: "" });
       } else {
         setStatus("❌ Lỗi: " + data.message);
       }
-    } catch (e) {
-      setStatus("❌ Không gửi được: " + e.message);
+    } catch (err) {
+      setStatus("❌ Không gửi được: " + err.message);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="mt-6 max-w-md mx-auto p-6 bg-white rounded-xl shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
-        Đăng ký tư vấn
-      </h2>
-
+    <div className="bg-gray-50 border rounded-xl p-6 mt-8 shadow-md max-w-xl mx-auto">
+      <h3 className="text-xl font-bold mb-4 text-gray-800 text-center">Đăng ký tư vấn</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <label className="block">
-          <span className="text-sm text-gray-700">Họ và tên</span>
-          <input
-            type="text"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="mt-1 w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </label>
-
-        <label className="block">
-          <span className="text-sm text-gray-700">Email</span>
-          <input
-            type="email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="mt-1 w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </label>
-
-        <label className="block">
-          <span className="text-sm text-gray-700">Nội dung cần tư vấn</span>
-          <textarea
-            rows={4}
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="mt-1 w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </label>
-
+        <input
+          type="text"
+          placeholder="Họ và tên"
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+          className="w-full px-4 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+          className="w-full px-4 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        <textarea
+          rows={4}
+          placeholder="Nội dung cần tư vấn"
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          className="w-full px-4 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
         <button
           type="submit"
           disabled={loading}
@@ -82,7 +69,6 @@ export default function ConsultFormInline({ initialEmail = "" }) {
           {loading ? "Đang gửi..." : "Gửi yêu cầu"}
         </button>
       </form>
-
       {status && <p className="text-center text-sm mt-3 text-gray-700">{status}</p>}
     </div>
   );
