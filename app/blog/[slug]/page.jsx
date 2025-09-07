@@ -216,7 +216,7 @@ export default function BlogDetailPage() {
           </Link>
           {/* Form Inline luôn hiển thị */}
           <div className="mt-16">
-             <ConsultFormInline />
+             <ConsultFormInline initialEmail="" />
           </div>
         </div>
         
