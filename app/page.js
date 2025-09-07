@@ -4,6 +4,9 @@ import Banner from "./components/Banner";
 import IntroSection from "./components/IntroSection";
 import FeaturesSection from "./components/FeaturesSection";
 import BeforeAfterSection from "./components/BeforeAfterSection";
+import StatsSection from "./components/StatsSection";
+import ProcessSection from "./components/ProcessSection";
+import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -14,6 +17,9 @@ export default function Home() {
       <IntroSection />
       <FeaturesSection />
       <BeforeAfterSection />
+      <StatsSection />
+      <ProcessSection />
+      <CTASection />
       <Footer />
     </main>
   );

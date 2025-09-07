@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import { useModal } from "@/app/contexts/ModalContext"; // ✅ import context
 
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const { openModal } = useModal(); // ✅ lấy hàm mở modal
 
   const menus = [
     { name: "Trang chủ", link: "/" },
@@ -16,7 +18,7 @@ export default function Header() {
     { name: "Hiệu Suất", link: "/hieu-suat" },
     { name: "Blog", link: "/blog" },
     { name: "Demo", link: "/demo" },
-    { name: "Liên hệ", link: "/lien-he" },
+    
   ];
 
   return (
@@ -50,14 +52,15 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA */}
+        {/* CTA desktop → gọi modal */}
         <div className="hidden md:block">
-          <Link
-            href="/lien-he"
-            className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
-          >
-            Đăng ký tư vấn
-          </Link>
+        <button
+          onClick={() => openModal()} // không truyền email → modal trống
+          className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
+        >
+          Đăng ký tư vấn
+        </button>
+
         </div>
 
         {/* Mobile menu button */}
@@ -79,20 +82,22 @@ export default function Header() {
               className={`block hover:text-blue-600 transition ${
                 pathname === menu.link ? "text-blue-600 font-semibold" : ""
               }`}
-              onClick={() => setIsOpen(false)} // đóng menu khi bấm
+              onClick={() => setIsOpen(false)}
             >
               {menu.name}
             </Link>
           ))}
 
-          {/* CTA cho mobile */}
-          <Link
-            href="/lien-he"
-            className="block text-center bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
-            onClick={() => setIsOpen(false)}
+          {/* CTA mobile → gọi modal */}
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              openModal(); // ✅ mở form khi bấm mobile
+            }}
+            className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
           >
             Đăng ký tư vấn
-          </Link>
+          </button>
         </nav>
       )}
     </header>

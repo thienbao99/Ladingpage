@@ -1,5 +1,6 @@
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { PiThreadsLogo } from "react-icons/pi";
 import Image from "next/image";
 
 export default function Footer() {
@@ -68,13 +69,19 @@ export default function Footer() {
             <a href="#" className="p-2 rounded-full bg-zinc-800 hover:bg-blue-500 transition">
               <FaLinkedinIn size={18} />
             </a>
+            <a href="#" className="p-2 rounded-full bg-zinc-800 hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-600 transition">
+              <FaInstagram size={18} />
+            </a>
+            <a href="#" className="p-2 rounded-full bg-zinc-800 hover:bg-black transition">
+              <PiThreadsLogo size={18} />
+            </a>
           </div>
         </div>
       </div>
 
       {/* Copyright */}
       <div className="border-t border-zinc-700 mt-10 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Web Optimal. All rights reserved.
+        © {new Date().getFullYear()} Tối Ưu Hóa Web. All rights reserved.
       </div>
     </footer>
   );

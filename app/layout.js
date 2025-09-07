@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ModalProvider } from "@/app/contexts/ModalContext";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,8 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
-        {children}
+      <body
+        className={`${inter.className} flex flex-col h-auto`}
+        suppressHydrationWarning
+      >
+        <ModalProvider>
+          <main className="flex-grow">{children}</main>
+        </ModalProvider>
       </body>
     </html>
   );

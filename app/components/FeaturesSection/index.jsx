@@ -1,8 +1,15 @@
 "use client";
 
-import { FaPaintBrush, FaSearch, FaRocket, FaBlog, FaLaptopCode } from "react-icons/fa";
+import {
+  FaPaintBrush,
+  FaSearch,
+  FaRocket,
+  FaBlog,
+  FaLaptopCode,
+} from "react-icons/fa";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function FeaturesSection() {
   const features = [
@@ -41,22 +48,42 @@ export default function FeaturesSection() {
   return (
     <section className="bg-white py-16 px-6 md:px-20">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        {/* Title */}
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           Các mục chính
-        </h2>
-        <p className="text-gray-600 mb-12">
-          Tìm hiểu các khía cạnh quan trọng trong việc tối ưu hóa website của bạn.
-        </p>
+        </motion.h2>
+
+        <motion.p
+          className="text-gray-600 mb-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          Tìm hiểu các khía cạnh quan trọng trong việc tối ưu hóa website của
+          bạn.
+        </motion.p>
 
         {/* Grid Features */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, idx) => (
-            <div
+            <motion.div
               key={idx}
               className="p-6 border rounded-2xl shadow-sm hover:shadow-md transition bg-gray-50 flex flex-col items-center text-center"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.15, duration: 0.5 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
             >
               {feature.icon}
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">{feature.title}</h3>
+              <h3 className="mt-4 text-xl font-semibold text-gray-900">
+                {feature.title}
+              </h3>
               <p className="mt-2 text-gray-600">{feature.desc}</p>
               <Link
                 href={feature.link}
@@ -64,7 +91,7 @@ export default function FeaturesSection() {
               >
                 Khám phá →
               </Link>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
