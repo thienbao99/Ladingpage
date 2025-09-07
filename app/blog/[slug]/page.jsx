@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from "next/link";
-import ConsultFormInline from "../../components/ConsultFormInline";
+import ConsultFormInLine from "../../components/ConsultFormInLine";
 import { postContents } from "../../data/postContents";
 
 export default function BlogDetailPage() {
@@ -36,7 +36,7 @@ export default function BlogDetailPage() {
             Quay lại Blog
           </Link>
           <div className="mt-14">
-            <ConsultFormInline />
+            <ConsultFormInLine />
           </div>
         </div>
       </main>
