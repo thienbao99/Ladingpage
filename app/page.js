@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import IntroSection from "./components/IntroSection";
 import FeaturesSection from "./components/FeaturesSection";
+import BeforeAfterSection from "./components/BeforeAfterSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Banner />
       <IntroSection />
       <FeaturesSection />
+      <BeforeAfterSection />
       <Footer />
     </main>
   );
