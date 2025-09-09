@@ -1,0 +1,50 @@
+name: CI/CD
+
+# Chạy khi push lên main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # 3. Cache node_modules
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 4. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 5. Run Jest tests
+      - name: Run tests
+        run: npm test
+
+      # 6. Deploy to Vercel if tests pass
+      - name: Deploy to Vercel
+        if: success() # chỉ chạy nếu test pass
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ YpUykyCSiJGAdTepfTjnZhmP }}
+          vercel-org-id: ${{ 3zfQNqvqrgznTNV2yHJovqIA }}
+          vercel-project-id: ${{ prj_5U8i9UVvm2VeZOGIvtbDQYyVJgkG }}
+          working-directory: ./  # nếu code root, giữ ./, nếu trong thư mục con, đổi theo
+          prod: true
