@@ -4,11 +4,17 @@ import "@testing-library/jest-dom";
 import React from "react";
 
 // Mock fetch global để test submit form
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    json: () => Promise.resolve({ success: true }),
-  })
-);
+beforeEach(() => {
+  global.fetch = jest.fn(() =>
+    Promise.resolve({
+      json: () => Promise.resolve({ success: true }),
+    })
+  );
+});
+// Reset mock sau mỗi test
+afterEach(() => {
+  jest.resetAllMocks();
+});
 
 describe("ConsultFormInline Component", () => {
   beforeEach(() => {
