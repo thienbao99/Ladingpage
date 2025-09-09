@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import ConsultFormInline from "../components/ConsultFormInline";
+import ConsultFormInline from "../components/ConsultFormInLine";
 
 export default function SummaryPage() {
   return (
