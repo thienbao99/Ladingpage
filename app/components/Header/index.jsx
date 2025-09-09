@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import { useModal } from "@/app/contexts/ModalContext"; // ✅ import context
+import { useModal } from "../../contexts/ModalContext";
 
 export default function Header() {
   const pathname = usePathname();

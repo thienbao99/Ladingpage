@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import ConsultFormModal from "@/app/components/ConsultFormModal";
+import ConsultFormModal from "../components/ConsultFormModal";
 
 const ModalContext = createContext({ openModal: (email) => {}, closeModal: () => {} });
 

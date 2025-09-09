@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { useModal } from "@/app/contexts/ModalContext";
+import { useModal } from "../../contexts/ModalContext";
 
 export default function Banner() {
   const { openModal } = useModal();
