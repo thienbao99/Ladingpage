@@ -20,7 +20,7 @@ export default function Footer() {
           <h1 className="tracking-widest text-sm font-light">
             TỐI ƯU HÓA WEB
           </h1>
-          <p className="mt-3 text-xs text-gray-400">
+          <p className="mt-3 text-xs text-white-400">
             UI đẹp – Hiệu suất cao – SEO chuẩn
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-zinc-700 mt-10 pt-6 text-center text-sm text-gray-500">
+      <div className="border-t border-zinc-700 mt-10 pt-6 text-center text-sm text-white-500">
         © {new Date().getFullYear()} Tối Ưu Hóa Web. All rights reserved.
       </div>
     </footer>

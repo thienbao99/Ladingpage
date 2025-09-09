@@ -4,8 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaClock, FaTools, FaLink, FaShieldAlt, FaQuestionCircle, FaLightbulb } from "react-icons/fa";
 import Link from "next/link";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Image from "next/image";
 
 export default function HocSeoCoBanPage() {
   const [activeDay, setActiveDay] = useState(null);
@@ -83,7 +82,7 @@ export default function HocSeoCoBanPage() {
 
   return (
     <>
-      <Header />
+     
 
       <main className="min-h-screen bg-gray-50 text-slate-800">
 
@@ -135,9 +134,12 @@ export default function HocSeoCoBanPage() {
       {/* Phần ảnh */}
       {day.img && (
         <div className="flex-shrink-0 w-full md:w-48">
-          <img 
+          <Image
             src={day.img} 
-            alt={day.title} 
+            alt={day.title}
+            width={192}
+            height={192}
+            priority
             className="rounded-lg shadow-md object-contain w-full h-48"
           />
         </div>
@@ -171,6 +173,7 @@ export default function HocSeoCoBanPage() {
               src="https://www.youtube.com/embed/FgxbuAtAeWc"
               title="Video hướng dẫn SEO"
               allowFullScreen
+              loading="lazy"
               className="w-full h-[60vw] min-h-[400px] rounded-lg shadow-lg"
             />
           </div>
@@ -215,7 +218,7 @@ export default function HocSeoCoBanPage() {
 
       </main>
 
-      <Footer />
+      
     </>
   );
 }

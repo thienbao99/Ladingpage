@@ -11,8 +11,6 @@ import {
   FaLightbulb,
 } from "react-icons/fa";
 import Link from "next/link";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import BeforeAfterSection from "../components/BeforeAfterSection";
 
 export default function HieuSuatPage() {
@@ -71,7 +69,7 @@ const tips = [
 
   return (
     <>
-      <Header />
+     
 
       <main className="min-h-screen bg-gray-50 text-slate-800">
 
@@ -184,15 +182,15 @@ const tips = [
             và chuẩn SEO.
           </p>
           <Link
-            href="/demo"
+            href="/blog"
             className="bg-white text-stone-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
           >
-            Xem Demo →
+            Xem Blog →
           </Link>
         </section>
       </main>
 
-      <Footer />
+      
     </>
   );
 }

@@ -4,8 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaTag } from "react-icons/fa";
 import Link from "next/link";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 import { posts } from "../data/postContents";
 
 const allTags = ["All", "UI", "SEO", "Performance"];
@@ -24,7 +23,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <Header />
+      
       <main className="min-h-screen bg-gray-50 text-slate-800">
         <section className="py-24 px-6 bg-gradient-to-r from-purple-500 to-pink-300 text-white text-center">
           <motion.h1 className="text-4xl md:text-5xl font-extrabold mb-4">Blog Chuyên Sâu</motion.h1>
@@ -107,13 +106,13 @@ export default function BlogPage() {
           </p>
           <Link
             href="/demo"
-            className="bg-white text-pink-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+            className="bg-white text-yellow-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
           >
             Xem Demo →
           </Link>
         </section>
       </main>
-      <Footer />
+      
     </>
   );
 }
