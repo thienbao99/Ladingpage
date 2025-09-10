@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="vi">
+    <html lang="vi" >
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <Header />
         <ModalProvider>

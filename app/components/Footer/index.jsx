@@ -60,19 +60,19 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-4">Kết nối</h3>
           <div className="flex space-x-4">
-            <a href="#" className="p-2 rounded-full bg-zinc-800 hover:bg-blue-600 transition">
+            <a href="https://www.facebook.com/thien.bao.757119" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-zinc-800 hover:bg-blue-600 transition">
               <FaFacebookF size={18} />
             </a>
-            <a href="#" className="p-2 rounded-full bg-zinc-800 hover:bg-sky-500 transition">
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-zinc-800 hover:bg-sky-500 transition">
               <FaTwitter size={18} />
             </a>
-            <a href="#" className="p-2 rounded-full bg-zinc-800 hover:bg-blue-500 transition">
+            <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-zinc-800 hover:bg-blue-500 transition">
               <FaLinkedinIn size={18} />
             </a>
-            <a href="#" className="p-2 rounded-full bg-zinc-800 hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-600 transition">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-zinc-800 hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-600 transition">
               <FaInstagram size={18} />
             </a>
-            <a href="#" className="p-2 rounded-full bg-zinc-800 hover:bg-black transition">
+            <a href="https://www.threads.com/?hl=vi" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-zinc-800 hover:bg-black transition">
               <PiThreadsLogo size={18} />
             </a>
           </div>
