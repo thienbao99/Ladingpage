@@ -31,7 +31,7 @@ export const metadata = {
     siteName: "Landing Page Optimal",
     images: [
       {
-        url: "https://ladingpage-optimal.vercel.app/Optimize.jpg",
+        url: "https://ladingpage-optimal.vercel.app/images/Optimize.jpg",
         width: 1200,
         height: 630,
         alt: "Tối ưu hóa Web - Landing Page Optimal",
