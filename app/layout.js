@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
-// Metadata chuẩn SEO
 export const metadata = {
   title: "Tối ưu hóa Web",
   description:
@@ -41,38 +40,21 @@ export const metadata = {
     locale: "vi_VN",
     type: "website",
   },
-
-  // Twitter Card
-  twitter: {
-    card: "summary_large_image",
-    title: "Tối ưu hóa Web",
-    description:
-      "Thiết kế UI hiện đại & chiến lược SEO hiệu suất cao cho website.",
-    images: ["https://ladingpage-optimal.vercel.app/og-image.png"],
-    creator: "@your_twitter_handle",// nếu có Twitter
-  },
-
-  // Icons (favicon + apple-touch-icon)
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-
-  // Metadata khác
-  alternates: {
-    canonical: "https://ladingpage-optimal.vercel.app",
-  },
-  metadataBase: new URL("https://ladingpage-optimal.vercel.app"),
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="vi">
+    <html lang="vi" >
       <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <Header />
         <ModalProvider>
+        <Header />
+        
+          {/*  Header áp dụng cho tất cả các trang */}
+          
+
           <main className="flex-grow">{children}</main>
+
+          {/*  Footer áp dụng cho tất cả các trang */}
           <Footer />
         </ModalProvider>
       </body>
