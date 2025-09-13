@@ -92,7 +92,7 @@ export default function Header() {
           <button
             onClick={() => {
               setIsOpen(false);
-              openModal(); // ✅ mở form khi bấm mobile
+              openModal(); //mở form khi bấm mobile
             }}
             className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
           >
